@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "tag1",
+    "processed": true
+  },
+  {
+    "id": 2,
+    "name": "tag2",
+    "processed": true
+  }
+]
