@@ -23,7 +23,7 @@ function writeStory(stories) {
 }
 
 const insertChapter2 = async (dataCreate) => {
-  await delay(2000)
+  await delay(2200)
   try {
     await axios.post('http://mot-file.xyz:8080/chapter/add', dataCreate, {
       headers: {
@@ -43,7 +43,7 @@ const startCrawlChapter2 = async (url, story_id) => {
   const arr = $('body > ul > li.col-xs-6 > a').toArray();
 
   for (const [index, item] of arr.entries()) {
-    await delay(2000)
+    await delay(2200)
     try {
       console.log(`start crawl chapter ${index + 1}`);
       const urlDetail = $(item).attr('href')
@@ -72,7 +72,7 @@ const run = async () => {
   const stories = readStory();
   for (const story of stories) {
     if (!story.processed && story.id && story.story_id) {
-      await delay(1000);
+      await delay(2000);
       console.log('start crawl story', story.storyName);
       await startCrawlChapter2(`https://truyen.tangthuvien.vn/story/chapters?story_id=${story.story_id}`, story.id)
       story.processed = true
