@@ -32,6 +32,14 @@ const insertChapter2 = async (dataCreate) => {
     })
   } catch (error) {
     console.log('error', error);
+    try {
+      await axios.post('http://mot-file.xyz:8080/chapter/add', dataCreate, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+    } catch (error) {
+    }
   }
 }
 
@@ -82,7 +90,7 @@ const run = async () => {
 
   }
   console.log('end crawl');
-  
+
 }
 
 run().then()
