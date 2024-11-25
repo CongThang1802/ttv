@@ -23,7 +23,7 @@ function writeStory(stories) {
 }
 
 const insertChapter2 = async (dataCreate) => {
-  await delay(1500)
+  await delay(2000)
   try {
     await axios.post('http://mot-file.xyz:8080/chapter/add', dataCreate, {
       headers: {
@@ -43,7 +43,7 @@ const startCrawlChapter2 = async (url, story_id) => {
   const arr = $('body > ul > li.col-xs-6 > a').toArray();
 
   for (const [index, item] of arr.entries()) {
-    await delay(1500)
+    await delay(2000)
     try {
       console.log(`start crawl chapter ${index + 1}`);
       const urlDetail = $(item).attr('href')
